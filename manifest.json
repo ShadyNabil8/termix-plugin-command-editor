@@ -1,0 +1,75 @@
+{
+  "id": "command-editor",
+  "name": "Command Editor",
+  "version": "1.0.0",
+  "description": "Edit the command at the prompt in a real editor window, then put it back or run it.",
+  "author": {
+    "name": "shady_nabil"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ShadyNabil8/termix-plugin-command-editor",
+  "docs": "https://github.com/ShadyNabil8/termix-plugin-command-editor/tree/main/docs",
+  "category": "Terminal",
+  "icon": "SquarePen",
+  "features": [
+    "Opens the command you are typing in a floating editor over the terminal",
+    "Shell syntax highlighting, search and replace, multiple cursors",
+    "Insert the edited command back at the prompt, or run it straight away",
+    "Multi-line commands go in as one paste, so they don't run line by line",
+    "Works over SSH with no setup on the server"
+  ],
+  "env": [],
+  "engine": {
+    "termix": ">=26.10.0",
+    "api": "^1.2"
+  },
+  "capabilities": ["ui:surface"],
+  "contributes": {
+    "keybindingActions": [{ "id": "open" }],
+    "settings": {
+      "user": [
+        {
+          "key": "defaultHotkey",
+          "type": "boolean",
+          "labelKey": "settings.user.defaultHotkey.label",
+          "descriptionKey": "settings.user.defaultHotkey.description",
+          "default": true
+        },
+        {
+          "key": "clearMode",
+          "type": "select",
+          "labelKey": "settings.user.clearMode.label",
+          "descriptionKey": "settings.user.clearMode.description",
+          "default": "readline",
+          "options": [
+            {
+              "value": "readline",
+              "labelKey": "settings.user.clearMode.readline"
+            },
+            {
+              "value": "escape",
+              "labelKey": "settings.user.clearMode.escape"
+            },
+            { "value": "none", "labelKey": "settings.user.clearMode.none" }
+          ]
+        },
+        {
+          "key": "fontSize",
+          "type": "number",
+          "labelKey": "settings.user.fontSize.label",
+          "min": 10,
+          "max": 24,
+          "default": 13
+        },
+        {
+          "key": "wrapLines",
+          "type": "boolean",
+          "labelKey": "settings.user.wrapLines.label",
+          "default": true
+        }
+      ]
+    }
+  },
+  "locales": "locales",
+  "platforms": ["linux", "win32", "darwin"]
+}

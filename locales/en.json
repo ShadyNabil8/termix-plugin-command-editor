@@ -1,0 +1,46 @@
+{
+  "plugin": {
+    "name": "Command Editor",
+    "description": "Edit the command at the prompt in a real editor window, then put it back or run it."
+  },
+  "editor": {
+    "open": "Edit command",
+    "title": "Edit command",
+    "insert": "Insert",
+    "run": "Run",
+    "cancel": "Cancel",
+    "maximize": "Maximize",
+    "restore": "Restore size",
+    "replaceLine": "Replace current line",
+    "stats": "{{lines}} lines, {{chars}} chars",
+    "multilineHint": "Multi-line text goes in as one paste. Shells without bracketed paste (bash before 5.1) run each line as it arrives.",
+    "noTerminal": "Open a terminal first.",
+    "multilineRuns": "This shell has no bracketed paste, so each line runs as soon as it is inserted.",
+    "fullScreen": "A full-screen program is open. Close it to edit the command line."
+  },
+  "keybindings": {
+    "open": "Edit the current command",
+    "defaultOpen": "Edit the current command (Command Editor)"
+  },
+  "settings": {
+    "user": {
+      "defaultHotkey": {
+        "label": "Open with Ctrl+Shift+X",
+        "description": "Turn off to use only a key you bind in Keybindings."
+      },
+      "clearMode": {
+        "label": "Replace the line with",
+        "description": "The keys that clear the prompt before the edited command goes in.",
+        "readline": "Ctrl+E, Ctrl+U (bash, zsh, fish, most shells)",
+        "escape": "Esc (PowerShell)",
+        "none": "Nothing, insert at the cursor"
+      },
+      "fontSize": {
+        "label": "Editor font size"
+      },
+      "wrapLines": {
+        "label": "Wrap long lines"
+      }
+    }
+  }
+}
